@@ -1,22 +1,7 @@
-# ==============================================================================
-# loop.py - Loop Mode Command
-# ==============================================================================
-# This plugin handles loop mode management.
-#
-# Commands:
-# - /loop - Cycle through loop modes (disable -> single -> queue -> disable)
-# - /loop disable - Disable loop
-# - /loop single - Loop current track
-# - /loop queue - Loop entire queue
-#
-# Requirements:
-# - User must be admin or authorized user
-# ==============================================================================
-
 from pyrogram import filters, types
 
-from HasiiMusic import app, db, lang
-from HasiiMusic.helpers import can_manage_vc
+from Elevenyts import app, db, lang
+from Elevenyts.helpers import can_manage_vc
 
 
 @app.on_message(filters.command(["loop"]) & filters.group & ~app.bl_users)
