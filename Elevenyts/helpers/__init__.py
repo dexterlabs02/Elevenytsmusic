@@ -5,7 +5,6 @@ from ._inline import Inline
 from ._queue import Queue
 from ._thumbnails import Thumbnail
 from ._utilities import Utilities
-from ._startup_hooks import precheck_channels
 
 buttons = Inline()
 thumb = Thumbnail()
