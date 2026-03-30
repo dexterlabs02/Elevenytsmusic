@@ -9,8 +9,3 @@ py-yt-search~=0.5.5
 python-dotenv~=1.2.1
 yt-dlp[default]>=2026.3.3
 ffmpeg
-telegraph
-gpytranslate
-pyrogram==2.0.106
-tgcrypto==1.2.5
-requests
