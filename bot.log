@@ -1,0 +1,16 @@
+[01-Apr-26 03:51:21 - INFO] - GraceMusic: 📁 Cache directories updated.
+[01-Apr-26 03:51:21 - INFO] - GraceMusic: 🌐 Loaded languages: en
+[01-Apr-26 03:51:21 - INFO] - GraceMusic: 🌐 HTTP health check server started on port 8000
+[01-Apr-26 03:51:21 - INFO] - GraceMusic: 🌐 HTTP server thread started for Render health checks
+[01-Apr-26 03:51:21 - INFO] - GraceMusic: ✅ Database connection successful. (0.22s)
+[01-Apr-26 03:51:21 - INFO] - GraceMusic: 📦 Loading database cache...
+[01-Apr-26 03:51:21 - INFO] - GraceMusic: ✅ Cache loaded: 1 chats, 1 users, 0 blacklisted.
+[01-Apr-26 03:51:23 - INFO] - GraceMusic: 🤖 Bot started successfully as @GraceMusicRobot
+[01-Apr-26 03:51:25 - WARNING] - GraceMusic: ⚠️ Assistant 1 couldn't send message to logger: Telegram says: [400 CHANNEL_INVALID] - The provided channel is invalid. (caused by "channels.GetChannels")
+[01-Apr-26 03:51:25 - INFO] - GraceMusic: 👤 Assistant 1 started as @None
+[01-Apr-26 03:51:25 - INFO] - GraceMusic: 📞 PyTgCalls client(s) started.
+[01-Apr-26 03:51:25 - INFO] - GraceMusic: 🔌 Loaded 34 plugin modules.
+[01-Apr-26 03:51:25 - INFO] - GraceMusic: 👑 Loaded 1 sudo users.
+[01-Apr-26 03:51:25 - INFO] - GraceMusic: 
+🎉 Bot started successfully! Ready to play music! 🎵
+

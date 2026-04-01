@@ -1,12 +1,12 @@
 <div align="center">
-  <img src="https://files.catbox.moe/43u332.jpg" alt="˹Elevenyts ᴍᴜꜱɪᴄ˼" width="400"/>
+  <img src="https://files.catbox.moe/43u332.jpg" alt="˹Grace Music˼" width="400"/>
   
-  # 🎵 ˹ᴇʟᴇᴠᴇɴʏᴛꜱ ᴍᴜꜱɪᴄ˼
+  # 🎵 ˹Grace Music˼
   
   <p><b>A Powerful Telegram Music Player Bot</b></p>
   
-  [![Telegram](https://img.shields.io/badge/Telegram-Channel-blue?style=for-the-badge&logo=telegram)](https://t.me/elevenyts)
-  [![Telegram](https://img.shields.io/badge/Telegram-Support-blue?style=for-the-badge&logo=telegram)](https://t.me/elevenytsmusic)
+  [![Telegram](https://img.shields.io/badge/Telegram-Channel-blue?style=for-the-badge&logo=telegram)](https://t.me/gracemusic)
+  [![Telegram](https://img.shields.io/badge/Telegram-Support-blue?style=for-the-badge&logo=telegram)](https://t.me/gracemusicchat)
   [![Telegram](https://img.shields.io/badge/Telegram-String_Session-Darkblue?style=for-the-badge&logo=telegram)](https://t.me/genStringbot)
   [![Cloudflare](https://img.shields.io/badge/Pinger-Cloudflare-orange?style=for-the-badge&logo=cloudflare)](https://dash.cloudflare.com)
 
@@ -80,8 +80,8 @@ STRING_SESSION=your_pyrogram_session
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/elevenyts/Elevenytsmusic
-cd Elevenytsmusic 
+git clone https://github.com/gracemusic/GraceMusic
+cd GraceMusic 
 ```
 
 2. **Install dependencies**
@@ -138,8 +138,8 @@ bash start
 
 ## 📞 Support & Contact
 
-- **Telegram Channel**: [@Elevenyts](https://t.me/elevenyts)
-- **Support Group**: [@Elevenyts Music](https://t.me/elevenytsmusic) 
+- **Telegram Channel**: [@GraceMusic](https://t.me/gracemusic)
+- **Support Group**: [@Grace Music Support](https://t.me/gracemusicchat) 
 
 ---
 

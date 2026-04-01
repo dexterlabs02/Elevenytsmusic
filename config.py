@@ -36,6 +36,23 @@ class Config:
         # MongoDB connection URL (mongodb+srv://...)
         self.MONGO_URL: str = getenv("MONGO_DB_URI", "")
 
+        # DynamoDB Configuration (AWS)
+        self.USE_DYNAMODB: bool = self._str_to_bool(getenv("USE_DYNAMODB", "False"))
+        self.AWS_ACCESS_KEY_ID: str = getenv("AWS_ACCESS_KEY_ID", "")
+        self.AWS_SECRET_ACCESS_KEY: str = getenv("AWS_SECRET_ACCESS_KEY", "")
+        self.AWS_REGION: str = getenv("AWS_REGION", "us-east-1")
+        
+        # DynamoDB Table Names
+        self.DYNAMODB_USERS_TABLE: str = getenv("DYNAMODB_USERS_TABLE", "grace_music_users")
+        self.DYNAMODB_CHATS_TABLE: str = getenv("DYNAMODB_CHATS_TABLE", "grace_music_chats")
+        self.DYNAMODB_BROADCAST_TABLE: str = getenv("DYNAMODB_BROADCAST_TABLE", "grace_music_broadcasts")
+        self.DYNAMODB_ANALYTICS_TABLE: str = getenv("DYNAMODB_ANALYTICS_TABLE", "grace_music_analytics")
+        self.DYNAMODB_PLAYLIST_TABLE: str = getenv("DYNAMODB_PLAYLIST_TABLE", "grace_music_playlists")
+
+        # Feature Flags for Database
+        self.ENABLE_ANALYTICS: bool = self._str_to_bool(getenv("ENABLE_ANALYTICS", "True"))
+        self.ENABLE_BROADCAST_DB: bool = self._str_to_bool(getenv("ENABLE_BROADCAST_DB", "True"))
+
         # ============ MUSIC BOT LIMITS ============
         # Convert minutes to seconds for duration limit
         # Max song duration (default: 300 min)
@@ -57,8 +74,8 @@ class Config:
 
         # ============ SUPPORT LINKS ============
         self.SUPPORT_CHANNEL: str = getenv(
-            "SUPPORT_CHANNEL", "https://t.me/elevenyts")
-        self.SUPPORT_CHAT: str = getenv("SUPPORT_CHAT", "https://t.me/elevenytsmusic")
+            "SUPPORT_CHANNEL", "https://t.me/gracemusic")
+        self.SUPPORT_CHAT: str = getenv("SUPPORT_CHAT", "https://t.me/gracemusicchat")
 
         # ============ EXCLUDED CHATS ============
         # Parse comma-separated chat IDs that assistants should never leave
@@ -135,11 +152,22 @@ class Config:
             "API_ID": self.API_ID,
             "API_HASH": self.API_HASH,
             "BOT_TOKEN": self.BOT_TOKEN,
-            "MONGO_DB_URI": self.MONGO_URL,
             "LOGGER_ID": self.LOGGER_ID,
             "OWNER_ID": self.OWNER_ID,
             "STRING_SESSION": self.SESSION1,
         }
+
+        # Database requirement: Either MongoDB or DynamoDB must be configured
+        if not self.MONGO_URL and not self.USE_DYNAMODB:
+            required_vars["DATABASE"] = None  # Will be marked as missing
+
+        # DynamoDB-specific requirements
+        if self.USE_DYNAMODB:
+            dynamodb_vars = {
+                "AWS_ACCESS_KEY_ID": self.AWS_ACCESS_KEY_ID,
+                "AWS_SECRET_ACCESS_KEY": self.AWS_SECRET_ACCESS_KEY,
+            }
+            required_vars.update(dynamodb_vars)
 
         missing = [
             name for name, value in required_vars.items()
@@ -149,5 +177,6 @@ class Config:
         if missing:
             raise SystemExit(
                 f"❌ Missing required environment variables: {', '.join(missing)}\n"
-                f"Please check your .env file and ensure all required variables are set."
+                f"Please check your .env file and ensure all required variables are set.\n"
+                f"📖 See sample.env for reference configuration."
             )

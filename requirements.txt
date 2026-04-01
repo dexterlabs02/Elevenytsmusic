@@ -9,3 +9,5 @@ py-yt-search~=0.5.5
 python-dotenv~=1.2.1
 yt-dlp[default]>=2026.3.3
 ffmpeg
+boto3>=1.26.0
+botocore>=1.29.0
